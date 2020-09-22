@@ -60,25 +60,27 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
   <script>
-    // 1. 이미지에 적혀있는 알파벳의 키를 누르면
     const playSound = (e) => {
       const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
       const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
       if (!audio) return;
-      audio.currentTime = 0; //처음으로 되감기
+      audio.currentTime = 0;
       audio.play()
       key.classList.add('playing')
 
     }
     window.addEventListener('keydown', playSound)
+    // addEventListener(이벤트종류, 함수이름)
+    // 브라우저 상에서 어떤 이벤트가 발생해야함(addEventListener)으로 브라우저 전역객체인 window를 사용한다.
+    // 그리고 키가 눌렸을 때 이벤트가 발생 해야하니 'keydown'을 입력한다.
+
+
     const keys = document.querySelectorAll('.key')
     const removeTransition = (e) => {
       if (e.propertyName !== 'transform') return;
       e.target.classList.remove('playing')
     }
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
-// 해당 이미지 테두리가 노란색으로 바뀌고
-// 소리가난다
   </script>
 
 
