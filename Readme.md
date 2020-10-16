@@ -1,3 +1,6 @@
+# https://geonlee.tistory.com/171
+휴먼.. 생각하세요..
+
 # JavaScript 기초연습
     WesBos의 JS30을 보고 따라하고, 응용까지 한다. 
 ***매일매일***
